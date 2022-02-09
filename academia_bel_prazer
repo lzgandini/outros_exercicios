@@ -1,0 +1,23 @@
+def cadastrar(nome, genero, idade, exercicio):
+    cadastro = {'nome': nome, 'genero': genero, 'idade': idade, 'exercicio': exercicio}
+    return cadastro
+
+pessoa1 = cadastrar('Elton', 'Masculino', 30, 'capoeira')
+pessoa2 = cadastrar('Marina', 'Feminino', 42, 'judo')
+pessoa3 = cadastrar('Taylor', 'Não binário', 25, 'karate')
+
+print('\nACADEMIA BEL PRAZER')
+
+atividades = ', '.join([pessoa1['exercicio'], pessoa2['exercicio'], pessoa3['exercicio']])
+alunos = ', '.join([pessoa1['nome'], pessoa2['nome'], pessoa3['nome']])
+idades = pessoa1['idade'], pessoa2['idade'], pessoa3['idade']
+generos = ', '.join([pessoa1['genero'], pessoa2['genero'], pessoa3['genero']])
+
+print('\nExercícios oferecidos:')
+print(atividades)
+print('\nAlunos matriculados:')
+print(alunos)
+print('\nFaixa etária destes alunos:')
+print('de {} a {} anos'.format(min(idades), max(idades)))
+print('\nGêneros destes alunos:')
+print(generos)
