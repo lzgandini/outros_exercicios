@@ -1,0 +1,21 @@
+from pessoa import Pessoa
+
+p1 = Pessoa('Ana', 31)
+p2 = Pessoa('Carla', 38)
+
+print('Lanche da tarde:')
+p1.comer('maçã')
+p1.falar('amor')
+p2.falar('trabalho')
+p1.parar_comer()
+p1.falar('amor')
+p1.comer('maçã')
+p1.parar_falar()
+
+print('\nAno atual:')
+print(f'- Através da variável de instância: {p1.ano_atual}')
+print(f'- Através da variável de classe: {Pessoa.ano_atual}')
+
+print('\nDatas de nascimento:')
+print(f'{p1.nome}: {p1.get_ano_nascimento()}')
+print(f'{p2.nome}: {p2.get_ano_nascimento()}')
