@@ -1,0 +1,12 @@
+from pessoa_a36 import Pessoa
+
+p1 = Pessoa.por_ano_nascimento('Ana', 1991)
+p2 = Pessoa('Carla', 38)
+
+print(Pessoa.ano_atual) #chamando a variável de classe
+
+print(p1.nome, p1.idade)
+print(p1.get_ano_nascimento())
+
+print(p2.nome, p2.idade)
+print(p2.get_ano_nascimento())
