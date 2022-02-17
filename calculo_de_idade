@@ -1,0 +1,49 @@
+from datetime import datetime
+
+class Pessoa:
+    ano_atual = int(datetime.strftime(datetime.now(), '%Y'))
+
+    def __init__(self, nome, data_nascimento, altura):
+        self.nome = nome
+        self.data_nascimento = data_nascimento
+        self.altura = altura
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @nome.setter
+    def nome(self, valor):
+        self._nome = valor.title()
+
+    """ #como fazer getter/setter de datas?
+    @property
+    def data_nascimento(self):
+        return self._data_nascimento
+    
+    @data_nascimento.setter
+    def data_nascimento(self, valor):"""
+
+    @property
+    def altura(self):
+        return self._altura
+
+    @altura.setter
+    def altura(self, valor):
+        self._altura = float(valor)
+
+    def idade_pessoa(self):
+    
+        #como deixar a linha de código 39 mais elegante?
+        
+        self.ano_nascimento = int(self.data_nascimento[6:10])
+        self.idade = self.ano_atual - self.ano_nascimento
+        return f'{self.nome} tem {self.idade} anos.'
+
+    def imprimir_pessoa(self):
+        print(f'Nome: {self.nome}\nData de nascimento: {self.data_nascimento}\nAltura: {self.altura}')
+        return
+
+p1 = Pessoa('Laura', '04/04/1994', 1.58)
+p1.imprimir_pessoa()
+print(p1.idade_pessoa())
