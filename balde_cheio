@@ -1,0 +1,40 @@
+import random
+
+class Balde:
+        def __init__(self, capacidade=0, qtde_agua=0, ocupacao=0):
+            self.capacidade = capacidade
+            self.qtde_agua = qtde_agua
+            self.ocupacao = ocupacao
+
+        def capacidade_balde(self):
+            self.capacidade = random.randrange(10, 50)
+            return self.capacidade
+
+        def encheu(self):
+            if self.ocupacao == self.capacidade:
+                return 'Parabéns! O balde está cheio!'
+            else:
+                return 'Continue tentando!'
+
+#ENTENDER SE ESTE BLOCO DE CÓDIGO PERTENCE À CLASSE BALDE
+        def sorteio(self):
+            #REPETIR ESTE CÓDIGO ENQUANTO NAO ENCHER
+
+            self.qtde_agua = random.uniform(0, 50)
+            print('A quantidade sorteada de água foi {:.2f} litros'.format(self.qtde_agua))
+
+            resposta = input('Deseja depositar esta quantidade no balde (sim/nao)? ')
+
+            if resposta == 'sim':
+                self.ocupacao += self.qtde_agua
+                print('A água foi depositada.')
+                return #CHAMAR A FUNÇÃO ENCHEU
+            elif resposta == 'nao':
+                return 'Obrigada por participar'
+            else:
+                return 'Resposta inválida'
+
+balde1 = Balde()
+print(balde1.qtde_agua)
+print(balde1.capacidade_balde())
+print(balde1.sorteio())
